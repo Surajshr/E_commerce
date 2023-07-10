@@ -5,15 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_application/core/services/firebase_services.dart';
-import 'package:shopping_application/feature/auth/view/auth_view.dart';
-import 'package:shopping_application/ui/app_text_styles.dart';
 import 'core/firebase_options/firebase_options.dart';
-import 'core/locator/locator.dart';
 import 'core/routing/routing.dart';
 import 'core/services/start_up_services/start_up_services.dart';
-import 'feature/home_page/logic/home_view_provider.dart';
-import 'feature/home_page/view/dashboard_view.dart';
+
 import 'utils/common_utils.dart';
 
 void main() {
@@ -58,82 +53,6 @@ class MyApp extends ConsumerWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class InitialHomeView extends ConsumerStatefulWidget {
-  const InitialHomeView({super.key});
-
-  @override
-  ConsumerState<InitialHomeView> createState() => _InitialHomeViewState();
-}
-
-class _InitialHomeViewState extends ConsumerState<InitialHomeView> {
-  final firebaseService = locator<FirebaseService>();
-  late HomeViewModel viewModel;
-
-  @override
-  void initState() {
-    viewModel = ref.read(homeViewProvider.notifier);
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: Colors.redAccent,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Center(
-          //   child: ElevatedButton(
-          //     onPressed: () async {
-          //       final response = await firebaseService.storeProduct(
-          //         productId: '126', tableName: '',
-          //       );
-          //       dPrint("success:$response");
-          //     },
-          //     child: const Text("store"),
-          //   ),
-          // ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              await viewModel.getProductDetail();
-            },
-            child: const Text("Fetch"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DashboardView(),
-                ),
-              );
-            },
-            child: Text(
-              "Navigate",
-              style: AppTextStyles.bodyLarge,
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AuthView(),
-                ),
-              );
-            },
-            child: const Text("Auth"),
-          ),
-        ],
-      ),
     );
   }
 }

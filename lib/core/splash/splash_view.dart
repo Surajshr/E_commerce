@@ -34,9 +34,6 @@ class SplashScreenState extends ConsumerState<SplashView> {
         viewModel.goRouter.pushNamed(AppRoute.dashboard.name);
       }
     });
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   ref.read(splashViewModelProvider.notifier).checkInitialState();
-    // });
   }
 
   @override

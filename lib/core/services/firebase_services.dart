@@ -61,23 +61,6 @@ class FirebaseService {
     }
   }
 
-  //
-  // Future<void> updateData({required String databaseTableName,required String updateIn})async{
-  //
-  //   // Get a key for a new Post.
-  //   final newPostKey =
-  //       FirebaseDatabase.instance.ref().child('posts').push().key;
-  //
-  //   // Write the new post's data simultaneously in the posts list and the
-  //   // user's post list.
-  //   final Map<String, Map> updates = {};
-  //   updates['/posts/$newPostKey'] = postData;
-  //   updates['/user-posts/$uid/$newPostKey'] = postData;
-  //
-  //   return FirebaseDatabase.instance.ref().update(updates);
-  //
-  // }
-
   Future<String> checkAuthStateChange() async {
     String respond = '';
     firebaseAuth.authStateChanges().listen((User? user) {
