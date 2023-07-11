@@ -1,7 +1,7 @@
 # shopping_application
 
 A new Flutter project.
-
+![App Preview](/images/smartphone.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
