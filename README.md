@@ -1,15 +1,16 @@
 # shopping_application
 
 A new Flutter project.
-![App Preview](/images/smartphone.png)
+![App Preview](/images/screenshots/1.jpg)
+![App Preview](/images/screenshots/2.jpg)
+![App Preview](/images/screenshots/3.jpg)
+![App Preview](/images/screenshots/5.jpg)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+this is the e-commerce app .
+ language used: Flutter,Dart, Firebase(realtime database,auth)
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
